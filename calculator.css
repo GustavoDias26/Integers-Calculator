@@ -1,0 +1,117 @@
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  display: grid;
+  place-items: center;
+  padding: 24px;
+
+  background: #162a0f; 
+  color: #e2e8f0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Calculator card */
+.calculator {
+  width: min(380px, 95vw);
+  background: #111827; 
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Display */
+#display {
+  display: block;
+  width: 100%;
+  min-height: 64px;
+  padding: 14px 12px;
+  margin-bottom: 14px;
+
+  background: #0b1220;
+  color: #e2e8f0;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: right;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Button styles */
+.btn {
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+
+  background: #1f2937;
+  color: #e5e7eb;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Special buttons */
+.btn-op {
+  background: #334155;
+}
+
+.btn-eq {
+  background: #2563eb;
+}
+
+.btn-wide {
+  grid-column: span 3;
+}
+
+/* Small screens */
+@media (max-width: 360px) {
+  .btn {
+    height: 52px;
+    font-size: 1.1rem;
+  }
+
+  #display {
+    font-size: 1.7rem;
+    min-height: 60px;
+  }
+}
